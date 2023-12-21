@@ -1,0 +1,14 @@
+GET http://localhost:3000/api/user HTTP/1.1
+
+###
+
+POST http://localhost:3000/api/user HTTP/1.1
+content-type: application/json
+
+{
+    "id":"d9dde288-390c-4c4c-815d-67cfc09b95f6",
+	"name": "",
+    "email": "teste@gmail.com",
+    "password": "123456",
+    "cep": 13486000
+}
