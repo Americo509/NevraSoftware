@@ -19,11 +19,12 @@ export class AppService {
 
   async create(createUserDto: CreateUserDto) {
     try {
-      this.userRepository
+      const user = await this.userRepository
         .createQueryBuilder()
         .insert()
         .values(createUserDto)
         .execute();
+      return user.raw[0];
     } catch (error) {
       throw new HttpException(error.message, HttpStatus.BAD_REQUEST);
     }

@@ -13,7 +13,7 @@ export class AppController {
   }
 
   @Post()
-  async create(@Body() createUserDto: CreateUserDto) {
-    return await this.appService.create(createUserDto);
+  create(@Body() createUserDto: CreateUserDto) {
+    return this.appService.create(createUserDto);
   }
 }

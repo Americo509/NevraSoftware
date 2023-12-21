@@ -7,6 +7,7 @@ import { ConfigModule } from '@nestjs/config';
 
 @Module({
   imports: [
+    TypeOrmModule.forFeature([UserEntity]),
     ConfigModule.forRoot({
       envFilePath: '.env',
     }),
@@ -17,9 +18,10 @@ import { ConfigModule } from '@nestjs/config';
       password: process.env.DB_PASSWORD,
       database: process.env.DB_DATABASE,
       port: Number(process.env.DB_PORT),
+      logging: true,
       synchronize: true,
+      entities: [UserEntity],
     }),
-    TypeOrmModule.forFeature([UserEntity]),
   ],
   controllers: [AppController],
   providers: [AppService],

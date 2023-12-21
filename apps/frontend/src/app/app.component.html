@@ -1,11 +1,34 @@
-<form class="example-form">
-  <mat-form-field class="example-full-width">
-    <mat-label>Favorite food</mat-label>
-    <input matInput placeholder="Ex. Pizza" value="Sushi">
-  </mat-form-field>
+<form class="name">
+  <div>
+    <mat-form-field class="example-full-width">
+      <mat-label>User</mat-label>
+      <input mat-fab placeholder="Ex. Gustavo">
+    </mat-form-field>
+  </div>
 
-  <mat-form-field class="example-full-width">
-    <mat-label>Leave a comment</mat-label>
-    <textarea matInput placeholder="Ex. It makes me feel..."></textarea>
-  </mat-form-field>
+  <div>
+    <mat-form-field class="example-full-width">
+      <mat-label>Password</mat-label>
+      <input mat-icon-button placeholder="Ex. @123abc">
+    </mat-form-field>
+  </div>
+
+  <div>
+    <mat-form-field class="example-full-width">
+      <mat-label>email</mat-label>
+      <input matInput placeholder="Ex. gustavo@teste.com">
+    </mat-form-field>
+  </div>
+
+  <div>
+    <mat-form-field class="example-full-width">
+      <mat-label>CEP</mat-label>
+      <input matInput placeholder="Ex. 00000-000">
+    </mat-form-field>
+    <button class="button-cep" mat-flat-button color="accent">Buscar CEP</button> 
+  </div>
+  
+  <div>
+    <button mat-flat-button color="accent">Accent</button>
+  </div>
 </form>
