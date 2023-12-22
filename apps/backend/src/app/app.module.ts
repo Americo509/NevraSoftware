@@ -6,21 +6,22 @@ import { UserEntity } from './entities/user.entity';
 import { ConfigModule } from '@nestjs/config';
 
 @Module({
+  
   imports: [
     TypeOrmModule.forFeature([UserEntity]),
     ConfigModule.forRoot({
       envFilePath: '.env',
     }),
     TypeOrmModule.forRoot({
-      type: 'postgres',
-      host: process.env.DB_HOST,
-      username: process.env.DB_USERNAME,
-      password: process.env.DB_PASSWORD,
-      database: process.env.DB_DATABASE,
-      port: Number(process.env.DB_PORT),
-      logging: true,
-      synchronize: true,
-      entities: [UserEntity],
+      type: 'firebird',
+      host: '127.0.0.1',
+      username: 'FTOLIVEIRA',
+      password: 'tew93uj8',
+      database: 'localhost:C:/caminho/do/banco/dados.fdb',
+      port: 3050,
+      // logging: true,
+      // synchronize: true,
+      // entities: [UserEntity],
     }),
   ],
   controllers: [AppController],
