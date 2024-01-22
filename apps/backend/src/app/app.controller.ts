@@ -1,7 +1,6 @@
-import { Body, Controller, Get, Param, Post } from '@nestjs/common';
+import { Controller, Get, Param, ParseIntPipe } from '@nestjs/common';
 
 import { AppService } from './app.service';
-import { CreateUserDto } from './dto/create-user.dto';
 
 @Controller('user')
 export class AppController {
@@ -12,8 +11,8 @@ export class AppController {
     return await this.appService.getCEP(cep);
   }
 
-  @Post()
-  create(@Body() createUserDto: CreateUserDto) {
-    return this.appService.create(createUserDto);
+  @Get('produtos/:id')
+  async getProductById(@Param('id', ParseIntPipe) id: number): Promise<any> {
+    return await this.appService.getProductById(id);
   }
 }
