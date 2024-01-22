@@ -1,8 +1,5 @@
-.name {
-  padding: 20px;
-  margin: 20px;
-}
-
-.button-cep{
-  margin: 20px;
+#buttons button{
+  margin-left: 5px;
+  margin-top: 50vh;
+  padding: 50px;
 }

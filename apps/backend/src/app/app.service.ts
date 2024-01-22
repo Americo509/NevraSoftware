@@ -1,20 +1,13 @@
 import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
-import { FirebirdService } from './connection/firebird.service';
+import { FirebirdQuery } from  'firebird-query';
 
 @Injectable()
 export class AppService {
-  async getCEP(cep: string) {
-    const cepResponse = await fetch(`https://viacep.com.br/ws/${cep}/json/`);
-    const cepJson = await cepResponse.json();
-    return cepJson;
-  }
-
   async getProductById(id: number): Promise<any> {
     try {
-      const firebirdService = new FirebirdService();
-      return await firebirdService.executeQuery(
-        'SELECT * FROM PRODUTO P WHERE P.PROCODIGO = ' + id,
-      );
+      const product = new FirebirdQuery ();
+      return await product.queryRaw `
+        SELECT * FROM PRODUTO P WHERE P.PROCODIGO = ${id}`.execute();
     } catch (error) {
       throw new HttpException(error.message, HttpStatus.BAD_REQUEST);
     }

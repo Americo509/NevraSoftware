@@ -27,6 +27,7 @@
     "correios-brasil": "^3.0.6",
     "cors": "^2.8.5",
     "express": "^4.18.2",
+    "firebird-query": "^0.4.4",
     "node-firebird": "^1.1.8",
     "pg": "^8.11.3",
     "reflect-metadata": "^0.1.13",
