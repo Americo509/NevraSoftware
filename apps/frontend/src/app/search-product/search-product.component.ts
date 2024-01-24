@@ -3,9 +3,9 @@ import { Router } from '@angular/router';
 import { AppService } from '../app.service';
 
 interface Produto {
-  procodigo: number;
-  descricaoresumida: string;
-  descricaocompleta: string;
+  PROCODIGO: number;
+  PRODESCRICAORESUMIDA: string;
+  PRODESCRICAOCOMPLETA: string;
 }
 
 @Component({
@@ -15,7 +15,11 @@ interface Produto {
 })
 export class SearchProductComponent {
 
-  produto: Produto = { procodigo: 0, descricaoresumida: '', descricaocompleta: '' };
+  produto: Produto = {
+    PROCODIGO: 0,
+    PRODESCRICAORESUMIDA: '',
+    PRODESCRICAOCOMPLETA: '',
+  };
 
   constructor(
     private service: AppService,
@@ -29,8 +33,6 @@ export class SearchProductComponent {
   getProductById(id: number): void {
     this.service.getProductById(id).subscribe((product: any) => {
       console.log(product);
-
-      // Atualizar a propriedade com os valores obtidos do serviço
       this.produto = product;
     });
   }

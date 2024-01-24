@@ -16,27 +16,11 @@ export class AppService {
 
   async createProduct(createProductDto: CreateProductDto): Promise<unknown> {
     try {
-      const codProdutoQuery = new FirebirdQuery ();
-      const result = await codProdutoQuery.queryRaw `
-        SELECT MAX(PROCODIGO) + 1 AS CODIGO FROM PRODUTO`.execute();
-      const codProduto = result[0];
-
-      if (typeof codProduto !== 'number') {
-        throw new Error('Invalid product code');
-      }
-
-      createProductDto.codProduto = codProduto + 1;
-
-    } catch (error) {
-      throw new HttpException(error.message, HttpStatus.BAD_REQUEST);
-    }
-
-    try {
       const product = new FirebirdQuery ();
       return await product.queryRaw `
-        INSERT INTO PRODUTO (PROCODIGO, PRODESCRICAO, PROVALOR) VALUES (
+        INSERT INTO PRODUTO (PROCODIGO, PRODESCRICAORESUMIDA, PRODESCRICAOCOMPLETA) VALUES (
           ${createProductDto.codProduto}, 
-          ${createProductDto.descricaoCompleta}, 
+          ${createProductDto.descricaoResumida}, 
           ${createProductDto.descricaoCompleta})`
           .execute();
     } catch (error) {

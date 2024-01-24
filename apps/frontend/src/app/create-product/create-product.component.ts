@@ -10,7 +10,7 @@ import { Produto } from '../interfaces/produto.interface';
 })
 export class CreateProductComponent {
 
-  codigoProdutoValue: string = '';
+  codProdutoValue: string = '';
   descricaoResumidaValue: string = '';
   descricaoCompletaValue: string = '';
 
@@ -23,23 +23,19 @@ export class CreateProductComponent {
     this.router.navigate(['/create']);
   }
 
-  convertToNumber(value: string): number {
-    return Number(value);
-  }
-
-  createNewProduct() {
-    if (!this.codigoProdutoValue || !this.descricaoResumidaValue || !this.descricaoCompletaValue) {
+  createNewProduct(productForm: any) {
+    if (!productForm.valid) {
       console.error('Por favor, preencha todos os campos antes de criar o produto. Certifique-se de que todos os campos estão corretamente preenchidos.');
-      return; // Retorna para evitar a execução do código seguinte se os campos não estiverem preenchidos
+      return;
     }
   
-    const novoProduto: Produto = {
-      codProduto: +this.codigoProdutoValue, // Convertendo para número
+    const produto: Produto = {
+      codProduto: +this.codProdutoValue, // Convertendo para número
       descricaoResumida: this.descricaoResumidaValue,
       descricaoCompleta: this.descricaoCompletaValue
     };
   
-    this.service.createProduct(novoProduto);
+    this.service.createProduct(produto);
   }
   
 }
