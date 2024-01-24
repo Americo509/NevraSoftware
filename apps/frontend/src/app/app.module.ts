@@ -13,16 +13,21 @@ import { MatDividerModule } from '@angular/material/divider';
 import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
-import { CatchProductComponent } from './catch-product/catch-product.component';
+import { SearchProductComponent } from './search-product/search-product.component';
 import { HomeComponent } from './home/home.component';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
+import { CreateProductComponent } from './create-product/create-product.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
-  {path: 'search', component: CatchProductComponent}
+  {path: 'search', component: SearchProductComponent},
+  {path: 'create', component: CreateProductComponent}
 ]
 
 @NgModule({
-  declarations: [AppComponent, CatchProductComponent, HomeComponent],
+  declarations: [AppComponent, SearchProductComponent, HomeComponent, CreateProductComponent],
   imports: [
     FormsModule,
     BrowserModule,
@@ -38,7 +43,10 @@ const routes: Routes = [
     MatButtonModule, 
     MatDividerModule, 
     MatIconModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule
   ],
   exports: [RouterModule],
   providers: [],

@@ -1,0 +1,32 @@
+.busca-produto {
+    text-align: center;
+    margin-top: 400px;
+}
+
+.home {
+    padding: 5px;
+    margin: 5px;
+    border-radius: 16px;
+    background-color: green;
+    color: #fff;
+    border: 0;
+    cursor: pointer;
+}
+
+.home:hover{
+    background-color: aqua;
+} 
+
+.pesquisar-novo {
+    padding: 5px;
+    margin: 5px;
+    border-radius: 16px;
+    background-color: blue;
+    color: #fff;
+    border: 0;
+    cursor: pointer;
+}
+
+.pesquisar-novo:hover {
+    background-color: cyan;
+}

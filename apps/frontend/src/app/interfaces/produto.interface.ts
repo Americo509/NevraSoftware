@@ -1,5 +1,5 @@
 export interface Produto {
-  procodigo: number;
-  descricaoresumida: string;
-  descricaocompleta: string;
+  codProduto: number;
+  descricaoResumida: string;
+  descricaoCompleta: string;
 }

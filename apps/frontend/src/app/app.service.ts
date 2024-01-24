@@ -15,7 +15,7 @@ export class AppService {
   }
 
   createProduct(produto: Produto) {
-    return this.http.post(environment.apiBaseUrl, produto).subscribe((response) => {
+    return this.http.post(environment.apiBaseUrl + 'produtos', produto).subscribe((response) => {
       console.log('Produto criado com sucesso!', response);
     },
     (error) => {

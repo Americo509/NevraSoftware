@@ -9,11 +9,11 @@ interface Produto {
 }
 
 @Component({
-  selector: 'nevra-catch-product',
-  templateUrl: './catch-product.component.html',
-  styleUrls: ['./catch-product.component.css'],
+  selector: 'nevra-search-product',
+  templateUrl: './search-product.component.html',
+  styleUrls: ['./search-product.component.css'],
 })
-export class CatchProductComponent {
+export class SearchProductComponent {
 
   produto: Produto = { procodigo: 0, descricaoresumida: '', descricaocompleta: '' };
 
@@ -22,7 +22,7 @@ export class CatchProductComponent {
     private router: Router,
   ) {}
 
-  navigateToCatchProduct() {
+  navigateToSearchProduct() {
     this.router.navigate(['/search']);
   }
 

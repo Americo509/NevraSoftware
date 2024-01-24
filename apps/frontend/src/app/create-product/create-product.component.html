@@ -1,0 +1,25 @@
+<form class="busca-produto">
+    <div>
+      <mat-form-field>
+        <mat-label>Codigo Produto</mat-label>
+        <input matInput placeholder="Ex. 123456" [(ngModel)]="codigoProdutoValue">
+      </mat-form-field>
+  
+      <mat-form-field>
+        <mat-label>Descricao Resumida</mat-label>
+        <input matInput placeholder="Ex. Teclado Gamer" [(ngModel)]="descricaoResumidaValue">
+      </mat-form-field>
+  
+      <mat-form-field>
+        <mat-label>Descricao Completa</mat-label>
+        <input matInput placeholder="Ex. Teclado Gamer Mecanico HyperX" [(ngModel)]="descricaoCompletaValue">
+      </mat-form-field>
+    </div>
+  
+    <div>
+      <button class="home" routerLink="">Menu Inicial</button>
+      <button class="create" routerLink="/create" (click)="createNewProduct()">Criar Novo Produto</button>
+    </div>
+  
+  </form>
+  
