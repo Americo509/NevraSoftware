@@ -4,6 +4,9 @@ import { FirebirdQuery } from  'firebird-query';
 
 @Injectable()
 export class AppService {
+
+  db = new FirebirdQuery()
+
   async getProductById(id: number): Promise<unknown> {
     try {
       const product = new FirebirdQuery ();

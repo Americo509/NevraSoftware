@@ -1,5 +1,8 @@
 .botoes {
     text-align: center;
-    margin: 16px;
-    margin-top: 400px;
+    margin-top: 450px;
+}
+
+.botoes button {
+    margin-right: 5px;
 }
