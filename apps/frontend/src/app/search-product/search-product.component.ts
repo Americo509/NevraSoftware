@@ -33,7 +33,7 @@ export class SearchProductComponent {
   getProductById(id: number): void {
     this.service.getProductById(id).subscribe((product: any) => {
       console.log(product);
-      this.produto = product;
+      this.produto = product[0];
     });
   }
 
