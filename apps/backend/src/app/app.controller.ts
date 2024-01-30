@@ -7,12 +7,12 @@ export class AppController {
   constructor(private readonly appService: AppService) {}
 
   @Get('produtos/:id')
-  async getProductById(@Param('id', ParseIntPipe) id: number): Promise<any> {
+  async getProductById(@Param('id', ParseIntPipe) id: number): Promise<unknown> {
     return await this.appService.getProductById(id);
   }
 
   @Post('produtos')
-  async createProduct(@Body() createProductDto: CreateProductDto): Promise<any> {
+  async createProduct(@Body() createProductDto: CreateProductDto): Promise<unknown> {
     return await this.appService.createProduct(createProductDto);
   }
 }

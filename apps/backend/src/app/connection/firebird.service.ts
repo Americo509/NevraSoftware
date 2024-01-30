@@ -1,15 +1,16 @@
 import { Injectable } from '@nestjs/common';
+import { FirebirdQuery } from 'firebird-query';
 import * as Firebird from 'node-firebird';
 
 @Injectable()
 export class FirebirdService {
-  private options = {
+    private options = {
     host: '127.0.0.1',
     port: 3050, 
     database: process.env.DB_DATABASE,
     user: process.env.DB_USER,
     password: process.env.DB_PASSWORD, 
-  };
+  }
 
   async executeQuery(sql: string, params: any[] = []): Promise<any[]> {
     return new Promise<any[]>((resolve, reject) => {
@@ -31,4 +32,5 @@ export class FirebirdService {
       });
     });
   }
+  
 }
